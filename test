@@ -1,0 +1,11 @@
+# -*- coding:utf8 -*-
+import urllib2
+if __name__ == '__main__':
+    url_get_base = "http://api.ltp-cloud.com/analysis/?"
+    api_key = ''    #注册语言后获得的认证标识
+    text = ''        #待分析文本
+    format = ''      #指定结果格式类型
+    pattern = ''     #指定分析模式
+    result = urllib2.urlopen("%sapi_key=%s&text=%s&format=%s&pattern=%s" % (url_get_base,api_key,text,format,pattern))
+    content = result.read().strip()
+    print content
